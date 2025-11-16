@@ -1,0 +1,62 @@
+# Configuration file for training and evaluation
+
+# Model Configuration
+model:
+  name: "t5-small"  # Options: t5-small, t5-base, flan-t5-small, flan-t5-base
+  max_source_length: 512
+  max_target_length: 150
+
+# LoRA Configuration
+lora:
+  r: 8  # Rank of LoRA matrices
+  alpha: 32  # Scaling parameter
+  dropout: 0.1  # Dropout rate
+  target_modules: ["q", "v"]  # Modules to apply LoRA to
+
+# Training Configuration
+training:
+  num_epochs: 3
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  learning_rate: 0.0002
+  weight_decay: 0.01
+  warmup_steps: 500
+  gradient_accumulation_steps: 4
+  logging_steps: 100
+  save_steps: 500
+  eval_steps: 500
+  fp16: true  # Use mixed precision training
+  use_8bit: false  # Use 8-bit quantization
+  use_4bit: false  # Use 4-bit quantization
+
+# Data Configuration
+data:
+  num_samples: 5000  # Number of samples from dataset
+  train_split: 0.8
+  val_split: 0.1
+  test_split: 0.1
+
+# Paths
+paths:
+  data_dir: "data/raw"
+  output_dir: "models/checkpoints"
+  mlflow_tracking_uri: "mlruns"
+
+# MLflow Configuration
+mlflow:
+  experiment_name: "text-summarization"
+  tracking_uri: null  # Set to remote server if needed
+
+# Evaluation Configuration
+evaluation:
+  metrics: ["rouge1", "rouge2", "rougeL"]
+  batch_size: 4
+  num_beams: 4
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  model_path: "models/checkpoints/final_model"
+  use_4bit: false
+  use_8bit: false
