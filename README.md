@@ -92,7 +92,7 @@ This project implements a complete pipeline for:
 1. **Clone the repository**
 ```bash
 git clone <repository-url>
-cd Project-Title-Domain-Specific-Text-Generation-and-Summarization-with-Fine-Tuned-Open-Source-LLM
+cd Domain-Specific-Text-Generation-and-Summarization-with-Fine-Tuned-Open-Source-LLM
 ```
 
 2. **Install dependencies**
