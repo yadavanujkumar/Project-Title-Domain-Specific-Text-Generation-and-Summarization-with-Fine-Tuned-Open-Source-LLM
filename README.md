@@ -372,26 +372,9 @@ python -m src.models.model_config
 pytest tests/  # If tests are added
 ```
 
-## 📝 Citation
-
-If you use this project in your research, please cite:
-
-```bibtex
-@software{domain_specific_summarization,
-  title={Domain-Specific Text Generation and Summarization with Fine-Tuned Open-Source LLM},
-  author={Your Name},
-  year={2024},
-  url={https://github.com/yourusername/project}
-}
-```
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 🐛 Troubleshooting
 
@@ -411,13 +394,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Ensure model files exist in the specified path
 - Verify model was saved correctly during training
 
-## 📧 Support
-
-For questions and support, please open an issue on GitHub.
-
-## 🙏 Acknowledgments
-
-- Hugging Face for the Transformers library
-- Microsoft for the LoRA (PEFT) implementation
-- Scientific Papers dataset from ArXiv
-- FastAPI framework for the REST API
